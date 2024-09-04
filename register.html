@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulir Pendaftaran</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin: auto;
+        background: #fff;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-right: 50px;
+        padding-left: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="kelas"],
+      input[type="number"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="textarea"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 8px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group button {
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .form-group button:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Formulir Pendaftaran</h1>
+      <form action="proses_tampil.php" method="post">
+        <div class="form-group">
+          <label for="name">Nama Lengkap:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="kelas">Kelas:</label>
+          <input type="kelas" id="kelas" name="kelas" required />
+        </div>
+        <div class="form-group">
+          <label for="absen">Absen:</label>
+          <input type="number" id="absen" name="absen" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="telepon">Nomor Telepon:</label>
+          <input type="tel" id="telepon" name="telepon" required />
+        </div>
+        <div class="form-group">
+          <label for="alamat">Alamat:</label>
+          <input type="textarea" id="alamat" name="alamat" required />
+        </div>
+        <div class="form-group">
+          <button type="submit">Kirim</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

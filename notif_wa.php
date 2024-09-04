@@ -1,5 +1,5 @@
   <?php
-  function kirim_notifikasi_wa($telepon, $name, $email)
+  function kirim_notifikasi_wa($telepon, $name, $email, $kelas, $absen, $alamat)
   {
     $curl = curl_init();
     curl_setopt_array($curl, array(
@@ -13,7 +13,7 @@
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS => array(
             'target' => $telepon,
-            'message' => "Nama Anda : $name dan Email : $email",
+            'message' => "🔶 Nama : *$name*\n🔶 Kelas : *$kelas*\n🔶 Absen : *$absen*\n🔶 Email : *$email*\n🔶 Telepon : *$telepon*\n🔶 Alamat : *$alamat*\n\n *Sudah Mengisi Formulir*",
             'countrycode' => '62',
         ),
         CURLOPT_HTTPHEADER => array(
@@ -33,14 +33,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $telepon = htmlspecialchars($_POST['telepon']);
+    $absen = htmlspecialchars($_POST['absen']);
+    $kelas = htmlspecialchars($_POST['kelas']);
+    $alamat = htmlspecialchars($_POST['alamat']);
     //$whatsapp = htmlspecialchars($_POST['whatsapp']);
 
     echo "<h2>Data Pendaftaran</h2>";
     echo "<p><strong>Nama : </strong> $name</p>";
+    echo "<p><strong>Kelas : </strong> $kelas</p>";
+    echo "<p><strong>Absen : </strong> $absen</p>";
     echo "<p><strong>Email :</strong> $email</p>";
     echo "<p><strong>Nomor Telepon :</strong> $telepon</p>";
+    echo "<p><strong>Alamat :</strong> $alamat</p>";
 
-    kirim_notifikasi_wa($telepon, $name, $email);
+    kirim_notifikasi_wa($telepon, $name, $email, $absen, $kelas, $alamat);
 } else {
     header("location: register.html");
     exit();

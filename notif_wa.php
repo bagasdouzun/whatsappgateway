@@ -27,4 +27,22 @@
     }
     curl_close ($curl);
   }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $telepon = htmlspecialchars($_POST['telepon']);
+    $whatsapp = htmlspecialchars($_POST['whatsapp']);
+
+    echo "<h2>Data Pendaftaran</h2>";
+    echo "<p><strong>Nama :</strong></p>";
+    echo "<p><strong>Email :</strong></p>";
+    echo "<p><strong>Nomor Telepon :</strong> $telepon</p>";
+
+    kirim_notifikasi_wa($telepon, $name, $email);
+} else {
+    header("location : register.html");
+    exit();
+}
+
   ?>

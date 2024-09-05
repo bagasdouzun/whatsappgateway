@@ -1,6 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $name = htmlspecialchars($_POST['name']);
+  $nisn = htmlspecialchars($_POST['nisn']);
   $absen = htmlspecialchars($_POST['absen']);
   $kelas = htmlspecialchars($_POST['kelas']);
   $email = htmlspecialchars($_POST['email']);
@@ -18,8 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     die("Koneksi Gagal: " . $conn->connect_error);
   }
 
-  $sql = "INSERT INTO siswa_tabel (nama, absen, kelas, email, telepon, alamat)
-  VALUES ('$name', '$absen', '$kelas', '$email', '$telepon', '$alamat')";
+  $sql = "INSERT INTO siswa_tabel (nama, nisn, absen, kelas, email, telepon, alamat)
+  VALUES ('$name', '$nisn' '$absen', '$kelas', '$email', '$telepon', '$alamat')";
 
   if ($conn->query($sql) === TRUE) {
   echo "Data Berhasil Disimpan.";
@@ -69,6 +70,7 @@ include 'notif_wa.php';
     <div class="container">
     <h1>Data Pendaftaran</h1>
     <p><strong>Nama :</strong> <?php echo $name; ?></p>
+    <p><strong>NISN :</strong> <?php echo $nisn; ?></p>
     <p><strong>Kelas :</strong> <?php echo $kelas; ?></p>
     <p><strong>Absen :</strong> <?php echo $absen; ?></p>
     <p><strong>Email :</strong> <?php echo $email; ?></p>

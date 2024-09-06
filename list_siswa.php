@@ -46,3 +46,11 @@ echo "<a href='register.html'>Tambah Data</a>";
 
 $conn->close();
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style_list.css">
+  <title>Data Siswa</title>
+</head>
+<body>

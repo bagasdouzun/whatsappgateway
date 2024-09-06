@@ -17,6 +17,7 @@ if ($result->num_rows > 0) {
   <th>Alamat</th>
   <th>Tanggal Daftar</th>
   <th>Aksi</th>
+  <th>Aksi</th>
   </tr>";
 
   while($row = $result->fetch_assoc()) {

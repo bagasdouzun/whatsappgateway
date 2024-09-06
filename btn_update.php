@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($conn->query($update_sql) === TRUE) {
         echo "Data berhasil diupdate!";
-        header("Location: index.php");
+        header("Location: list_siswa.php");
     } else {
         echo "Error: " . $conn->error;
     }

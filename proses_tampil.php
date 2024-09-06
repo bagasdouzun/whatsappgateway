@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   $sql = "INSERT INTO siswa_tabel (nama, nisn, absen, kelas, email, telepon, alamat)
-  VALUES ('$name', '$nisn' '$absen', '$kelas', '$email', '$telepon', '$alamat')";
+  VALUES ('$name', '$nisn', '$absen', '$kelas', '$email', '$telepon', '$alamat')";
 
   if ($conn->query($sql) === TRUE) {
   echo "Data Berhasil Disimpan.";

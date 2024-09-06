@@ -15,32 +15,33 @@ if ($result->num_rows > 0) {
   <th>Email</th>
   <th>Telepon</th>
   <th>Alamat</th>
-  <th>Tanggal Daftar</th>";
+  <th>Tanggal Daftar</th>
+  <th>Aksi</th>
+  </tr>";
 
-while($row = $result->fetch_assoc()) {
-  echo "<tr>";
-  echo "<td>" . $row["id"] . "</td>";
-  echo "<td>" . $row["nama"] . "</td>";
-  echo "<td>" . $row["nisn"] . "</td>";
-  echo "<td>" . $row["absen"] . "</td>";
-  echo "<td>" . $row["kelas"] . "</td>";
-  echo "<td>" . $row["email"] . "</td>";
-  echo "<td>" . $row["telepon"] . "</td>";
-  echo "<td>" . $row["alamat"] . "</td>";
-  echo "<td>" . $row["tanggal_daftar"] . "</td>";
+  while($row = $result->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td>" . $row["id"] . "</td>";
+    echo "<td>" . $row["nama"] . "</td>";
+    echo "<td>" . $row["nisn"] . "</td>";
+    echo "<td>" . $row["absen"] . "</td>";
+    echo "<td>" . $row["kelas"] . "</td>";
+    echo "<td>" . $row["email"] . "</td>";
+    echo "<td>" . $row["telepon"] . "</td>";
+    echo "<td>" . $row["alamat"] . "</td>";
+    echo "<td>" . $row["tanggal_daftar"] . "</td>";
+    
+    echo "<td><a href='edit.php?id=" . $row["id"] . "'>Edit</a></td>";
+    echo "<td><a href='delete.php?id=" . $row["id"] . "' onclick='return confirm(\"Apakah Anda Yakin Ingin Menghapus Data Ini?\")'>Delete</a></td>";
+    echo "</tr>";
+  }
 
-  echo "<td><a href='edit.php?id=" . $row["id"] . "'Edit</a></td>";
-  echo "<td><a href='delete.php?id=" . $row["id"] . "'onclick='return confirm(\"Apakah Anda Yakin Ingin Menghapus Data Ini?\")'Delete</a></td>";
-
-  echo "</tr>";
-}
-
-echo "</table>";
+  echo "</table>";
 } else {
   echo "Tidak Ada Data Ditemukan.";
 }
 
-echo "<td><a a href='register.html'>Tambah Data</a></td>";
+echo "<a href='register.html'>Tambah Data</a>";
 
 $conn->close();
 ?>

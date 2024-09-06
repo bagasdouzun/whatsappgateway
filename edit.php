@@ -26,6 +26,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="edit_style.css">
+  <title>Edit Data Siswa</title>
+</head>
+<body>
+
 <form method="POST">
     Nama: <input type="text" name="nama" value="<?php echo $row['nama']; ?>"><br>
     NISN: <input type="text" name="nisn" value="<?php echo $row['nisn']; ?>"><br>

@@ -44,6 +44,8 @@ if ($result->num_rows > 0) {
 
 echo "<a href='register.html'>Tambah Data</a>";
 
+echo "<a href='proses_logout.php' method='post'>Logout</a>";
+
 $conn->close();
 ?>
 

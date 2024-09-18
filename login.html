@@ -59,6 +59,21 @@
         .login-container button:hover {
             background-color: #218838;
         }
+
+        .login-container .create-account {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .login-container .create-account a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .login-container .create-account a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -72,6 +87,9 @@
             <input type="text" id="nisn" name="nisn" required>
 
             <button type="submit">Login</button>
+            <div class="create-account">
+                <a href="register.html">Create Account</a>
+            </div>
         </form>
     </div>
 </body>

@@ -26,4 +26,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $update_query = "UPDATE absensi SET waktu_pulang = '$waktu', status_pulang = 'Pulang' WHERE id_siswa = '$id_siswa' AND tanggal = '$tanggal'";
             if (mysqli_query($conn, $update_query)) {
                 echo "Absensi pulang berhasil tercatat!";
+            } else {
+                echo "Error: " . mysqli_error($conn);
+            }
+        }
+    } else {
+        echo "RFID tidak ditemukan.";
+    }
+}
 ?>

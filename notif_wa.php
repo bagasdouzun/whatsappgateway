@@ -1,5 +1,5 @@
   <?php
-  function kirim_notifikasi_wa($telepon, $name, $nisn, $email, $kelas, $absen, $alamat)
+  function kirim_notifikasi_wa($telepon, $name, $nisn, $email, $kelas, $absen, $alamat, $rfid)
   {
     $curl = curl_init();
     curl_setopt_array($curl, array(
@@ -13,7 +13,7 @@
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS => array(
             'target' => $telepon,
-            'message' => "🔶 Nama : *$name*\n🔶 NISN : *$nisn*\n🔶 Kelas : *$kelas*\n🔶 Absen : *$absen*\n🔶 Email : *$email*\n🔶 Telepon : *$telepon*\n🔶 Alamat : *$alamat*\n\n *Sudah Mengisi Formulir*",
+            'message' => "🔶 Nama : *$name*\n🔶 NISN : *$nisn*\n🔶 Kelas : *$kelas*\n🔶 Absen : *$absen*\n🔶 Email : *$email*\n🔶 Telepon : *$telepon*\n🔶 Alamat : *$alamat*\n🔶 RFID : *$rfid*\n\n *Sudah Mengisi Formulir*",
             'countrycode' => '62',
         ),
         CURLOPT_HTTPHEADER => array(
@@ -37,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $absen = htmlspecialchars($_POST['absen']);
     $kelas = htmlspecialchars($_POST['kelas']);
     $alamat = htmlspecialchars($_POST['alamat']);
+    $rfid = htmlspecialchars($_POST['rfid']);
     //$whatsapp = htmlspecialchars($_POST['whatsapp']);
 
     echo "<h2>Data Pendaftaran</h2>";
@@ -47,8 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<p><strong>Email :</strong> $email</p>";
     echo "<p><strong>Nomor Telepon :</strong> $telepon</p>";
     echo "<p><strong>Alamat :</strong> $alamat</p>";
+    echo "<p><strong>RFID :</strong> $rfid</p>";
 
-    kirim_notifikasi_wa($telepon, $name, $nisn, $email, $absen, $kelas, $alamat);
+    kirim_notifikasi_wa($telepon, $name, $nisn, $email, $absen, $kelas, $alamat, $rfid);
 } else {
     header("location: register.html");
     exit();

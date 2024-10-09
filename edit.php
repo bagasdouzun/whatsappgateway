@@ -14,8 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $telepon = $_POST['telepon'];
     $alamat = $_POST['alamat'];
+    $rfid = $_POST['rfid'];
 
-    $update_sql = "UPDATE siswa_tabel SET nama='$nama', nisn='$nisn', absen='$absen', kelas='$kelas', email='$email', telepon='$telepon', alamat='$alamat' WHERE id=$id";
+    $update_sql = "UPDATE siswa_tabel SET nama='$nama', nisn='$nisn', absen='$absen', kelas='$kelas', email='$email', telepon='$telepon', alamat='$alamat', rfid='$rfid' WHERE id=$id";
     
     if ($conn->query($update_sql) === TRUE) {
         echo "Data berhasil diupdate!";
@@ -42,5 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     Email: <input type="text" name="email" value="<?php echo $row['email']; ?>"><br>
     Telepon: <input type="text" name="telepon" value="<?php echo $row['telepon']; ?>"><br>
     Alamat: <input type="text" name="alamat" value="<?php echo $row['alamat']; ?>"><br>
+    RFID: <input type="text" name="rfid" value="<?php echo $row['rfid']; ?>"><br>
     <input type="submit" value="Update">
 </form>

@@ -1,7 +1,7 @@
 <?php
 include 'koneksi.php';
 
-$sql = "SELECT id, nama, nisn, absen, kelas, email, telepon, alamat, tanggal_daftar FROM siswa_tabel";
+$sql = "SELECT id, nama, nisn, absen, kelas, email, telepon, alamat, tanggal_daftar, rfid FROM siswa_tabel";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -16,6 +16,7 @@ if ($result->num_rows > 0) {
   <th>Telepon</th>
   <th>Alamat</th>
   <th>Tanggal Daftar</th>
+  <th>RFID</th>
   <th>Aksi</th>
   <th>Aksi</th>
   </tr>";
@@ -31,6 +32,7 @@ if ($result->num_rows > 0) {
     echo "<td>" . $row["telepon"] . "</td>";
     echo "<td>" . $row["alamat"] . "</td>";
     echo "<td>" . $row["tanggal_daftar"] . "</td>";
+    echo "<td>" . $row["rfid"] . "</td>";
     
     echo "<td><a href='edit.php?id=" . $row["id"] . "'>Edit</a></td>";
     echo "<td><a href='delete.php?id=" . $row["id"] . "' onclick='return confirm(\"Apakah Anda Yakin Ingin Menghapus Data Ini?\")'>Delete</a></td>";

@@ -7,6 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $email = htmlspecialchars($_POST['email']);
   $telepon = htmlspecialchars($_POST['telepon']);
   $alamat = htmlspecialchars($_POST['alamat']);
+  $rfid = htmlspecialchars($_POST['rfid']);
 
   $servername = "localhost";
   $username = "root";
@@ -19,8 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     die("Koneksi Gagal: " . $conn->connect_error);
   }
 
-  $sql = "INSERT INTO siswa_tabel (nama, nisn, absen, kelas, email, telepon, alamat)
-  VALUES ('$name', '$nisn', '$absen', '$kelas', '$email', '$telepon', '$alamat')";
+  $sql = "INSERT INTO siswa_tabel (nama, nisn, absen, kelas, email, telepon, alamat, rfid)
+  VALUES ('$name', '$nisn', '$absen', '$kelas', '$email', '$telepon', '$alamat', '$rfid')";
 
   if ($conn->query($sql) === TRUE) {
   echo "Data Berhasil Disimpan.";
@@ -76,6 +77,7 @@ include 'notif_wa.php';
     <p><strong>Email :</strong> <?php echo $email; ?></p>
     <p><strong>Nomor Telepon :</strong> <?php echo $telepon; ?></p>
     <p><strong>Alamat :</strong> <?php echo $alamat; ?></p>
+    <p><strong>RFID :</strong> <?php echo $rfid; ?></p>
     </div>
 </body>
 </html>

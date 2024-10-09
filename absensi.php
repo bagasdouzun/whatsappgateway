@@ -1,9 +1,11 @@
 <?php
 include 'koneksi.php';
+date_default_timezone_set('Asia/Jakarta');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rfid = $_POST['rfid'];
     $tanggal = date('Y-m-d');
+    $waktu = date('H:i:s');
 
     $query_siswa = "SELECT * FROM siswa_tabel WHERE rfid = '$rfid'";
     $result_siswa = mysqli_query($conn, $query_siswa);

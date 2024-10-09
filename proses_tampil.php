@@ -79,5 +79,8 @@ include 'notif_wa.php';
     <p><strong>Alamat :</strong> <?php echo $alamat; ?></p>
     <p><strong>RFID :</strong> <?php echo $rfid; ?></p>
     </div>
+    <div class="list-siswa">
+          <a href="list_siswa.php">List Siswa</a>
+      </div>
 </body>
 </html>

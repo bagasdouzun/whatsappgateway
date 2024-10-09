@@ -1,101 +1,102 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #333;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
 }
 
 .container {
-    background: #fff;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    transition: transform 0.3s ease;
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .container:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 h1 {
-    font-size: 26px;
-    margin-bottom: 30px;
-    color: #4A90E2;
+  font-size: 26px;
+  margin-bottom: 30px;
+  color: #4a90e2;
 }
 
 .absensi_form {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 label {
-    display: block;
-    font-size: 18px;
-    margin-bottom: 15px;
-    color: #555;
+  display: block;
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #555;
 }
 
 input[type="text"] {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 25px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    font-size: 16px;
-    transition: all 0.3s ease;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 25px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
 input[type="text"]:focus {
-    border-color: #4A90E2;
-    box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
-    outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
+  outline: none;
 }
 
 button {
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(90deg, #4A90E2 0%, #50C9C3 100%);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #4a90e2 0%, #50c9c3 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-    background: linear-gradient(90deg, #50C9C3 0%, #4A90E2 100%);
+  background: linear-gradient(90deg, #50c9c3 0%, #4a90e2 100%);
 }
 
 .response {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #ff4b5c;
-    font-weight: bold;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #000000;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding: 30px;
-    }
+  .container {
+    padding: 30px;
+  }
 
-    h1 {
-        font-size: 22px;
-    }
+  h1 {
+    font-size: 22px;
+  }
 
-    input[type="text"], button {
-        font-size: 16px;
-    }
+  input[type="text"],
+  button {
+    font-size: 16px;
+  }
 }

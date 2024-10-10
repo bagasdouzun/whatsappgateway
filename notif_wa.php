@@ -13,7 +13,7 @@
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS => array(
             'target' => $telepon,
-            'message' => "🔶 Nama : *$name*\n🔶 NISN : *$nisn*\n🔶 Kelas : *$kelas*\n🔶 Absen : *$absen*\n🔶 Email : *$email*\n🔶 Telepon : *$telepon*\n🔶 Alamat : *$alamat*\n🔶 RFID : *$rfid*\n\n *Sudah Mengisi Formulir*",
+            'message' => "🔶 Nama : *$name*\n🔶 NISN : *$nisn*\n🔶 Kelas : *$absen*\n🔶 Absen : *$kelas*\n🔶 Email : *$email*\n🔶 Telepon : *$telepon*\n🔶 Alamat : *$alamat*\n🔶 RFID : *$rfid*\n\n *Sudah Mengisi Formulir*",
             'countrycode' => '62',
         ),
         CURLOPT_HTTPHEADER => array(

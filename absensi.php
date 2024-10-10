@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $update_query = "UPDATE absensi SET waktu_pulang = '$waktu', status_pulang = 'Pulang' WHERE id_siswa = '$siswa[id]' AND tanggal = '$tanggal'";
             if (mysqli_query($conn, $update_query)) {
                 echo "Absensi pulang berhasil tercatat!";
-                kirim_notifikasi_wa($telepon, $nama, $kelas, $absen, $rfid, $waktu, '', 'masuk');
+                kirim_notifikasi_wa($telepon, $nama, $kelas, $absen, $rfid, '', $waktu, 'pulang');
             } else {
                 echo "Error: " . mysqli_error($conn);
             }
